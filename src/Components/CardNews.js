@@ -17,8 +17,11 @@ class Cardnews extends HTMLElement{
 
         const autor = document.createElement("span");
             autor.textContent = "by " + (this.getAttribute("autor") || "Anonymous");     
+        
         const linkTitle = document.createElement("a");
             linkTitle.textContent = this.getAttribute("title")
+            linkTitle.href = this.getAttribute("link-url")
+        
         const newsContent = document.createElement("p");
             newsContent.textContent = this.getAttribute("content")
 
@@ -28,6 +31,8 @@ class Cardnews extends HTMLElement{
             cardRight.setAttribute("class", "cardRight")
 
         const newsImage = document.createElement("img");
+        newsImage.src = "/assets/darthVader.jpg"
+        newsImage.alt = "Foto da noticia"
 //
 //
         componentRoot.appendChild(cardLeft);
