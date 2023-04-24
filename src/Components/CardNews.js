@@ -48,7 +48,48 @@ class Cardnews extends HTMLElement{
         return componentRoot
     }
 
-    styles() {}
+    styles() {
+        const style = document.createElement("style");
+        style.textContent = `
+        .card{
+            width: 100%;
+            -webkit-box-shadow: 10px 10px 13px 4px rgba(0,0,0,0.25);
+            -moz-box-shadow: 10px 10px 13px 4px rgba(0,0,0,0.25);
+            box-shadow: 10px 10px 13px 4px rgba(0,0,0,0.25);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .cardLeft{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 10px;
+        }
+        
+        .cardLeft a{
+            margin-top: 15px;
+            font-size: 25px;
+            color: black;
+            text-decoration: none;
+        }
+        
+        .cardLeft span{
+            font-weight: 400;
+        }
+        
+        .cardLeft p{
+            color: gray;
+        }
+        
+        .cardRight img{
+            width: 250px;
+            height: 180px;
+        }
+        `
+
+        return style;
+    }
 }
 
 customElements.define("card-news", Cardnews)
